@@ -12,12 +12,6 @@ module PokerRanking
         @suit = suit
       end
 
-      if id.is_a? Integer
-        @value = id % 13 + 2
-
-        @suit = SUITS[id / 13]
-      end
-
       @rank = RANKS[@value - 2]
     end
 

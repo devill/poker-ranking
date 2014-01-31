@@ -5,38 +5,38 @@ require_relative '../lib/card'
 describe 'PokerRanking::Card' do
 
   it 'should have a rank and a value' do
-    card = PokerRanking::Card.new 8
+    card = PokerRanking::Card.new '10 of Diamonds'
     card.rank.should == '10'
     card.value.should == 10
 
-    card = PokerRanking::Card.new 11
+    card = PokerRanking::Card.new 'King of Diamonds'
     card.rank.should == 'King'
     card.value.should == 13
 
-    card = PokerRanking::Card.new 21
+    card = PokerRanking::Card.new '10 of Hearts'
     card.rank.should == '10'
     card.value.should == 10
   end
 
   it 'should be comparable based on value' do
-    lCard = PokerRanking::Card.new 8
-    rCard = PokerRanking::Card.new 9
+    lCard = PokerRanking::Card.new '8 of Diamonds'
+    rCard = PokerRanking::Card.new '9 of Diamonds'
 
     lCard.worth_less_than(rCard).should be_true
     rCard.worth_less_than(lCard).should be_false
 
-    lCard = PokerRanking::Card.new 21
-    rCard = PokerRanking::Card.new 10
+    lCard = PokerRanking::Card.new '8 of Hearts'
+    rCard = PokerRanking::Card.new '9 of Spades'
 
     lCard.worth_less_than(rCard).should be_true
     rCard.worth_less_than(lCard).should be_false
   end
 
   it 'should have a suit' do
-    card = PokerRanking::Card.new 8
+    card = PokerRanking::Card.new '8 of Hearts'
     card.suit.should == 'Hearts'
 
-    card = PokerRanking::Card.new 13
+    card = PokerRanking::Card.new '13 of Diamonds'
     card.suit.should == 'Diamonds'
   end
 
@@ -58,7 +58,7 @@ describe 'PokerRanking::Card' do
   end
   
   it 'should return the name' do
-    card = PokerRanking::Card.new 22
+    card = PokerRanking::Card.new 'Jack of Diamonds'
 
     card.to_s.should == 'Jack of Diamonds'
   end
