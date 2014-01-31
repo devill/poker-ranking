@@ -1,4 +1,15 @@
 require 'rspec/core/rake_task'
+require_relative 'lib/poker_ranking'
+
+namespace :gem do
+  task :build do
+    system "gem build poker_ranking.gemspec"
+  end
+
+  task :release => :build do
+    system "gem push poker_ranking-#{PokerRanking::VERSION}.gem"
+  end
+end
 
 namespace :test do
 
