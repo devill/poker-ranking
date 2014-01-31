@@ -23,7 +23,7 @@ module PokerRanking
         elsif card.is_a? String
           @cards << PokerRanking::Card::from_name(card)
         else
-          raise 'Hand initializer expects a card or a card name'
+          @cards << PokerRanking::Card.new(card)
         end
       end
 

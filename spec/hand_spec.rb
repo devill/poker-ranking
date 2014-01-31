@@ -18,6 +18,14 @@ describe PokerRanking::Hand do
     hand.cards.first.should == card
   end
 
+  it 'should accept card hashes' do
+    card = PokerRanking::Card::from_name('6 of Hearts')
+
+    hand = PokerRanking::Hand.new([{rank: 6, suit: 'Hearts'}])
+
+    hand.cards.first.should == card
+  end
+
   it 'should rank the empty hand below any other hand' do
     empty_hand = PokerRanking::Hand.new []
     other_hand = PokerRanking::Hand.new(['2 of Hearts'])

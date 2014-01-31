@@ -7,8 +7,8 @@ module PokerRanking
 
     def initialize(card_data)
       @suit = card_data[:suit]
-      @rank = card_data[:rank]
-      set_value_by_rank_name(card_data[:rank])
+      @rank = card_data[:rank].to_s
+      set_value_by_rank_name(@rank)
     end
 
     def set_value_by_rank_name(rank)
