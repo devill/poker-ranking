@@ -5,28 +5,14 @@ module PokerRanking
     RANKS = %w(2 3 4 5 6 7 8 9 10 Jack Queen King Ace)
     SUITS = %w(Hearts Diamonds Spades Clubs)
 
-    def initialize(id)
-      if id.is_a? String
-        rank, suit = id.split /\s+of\s+/
-        set_value_by_rank_name(rank)
-        @suit = suit
-      end
-
-      @rank = RANKS[@value - 2]
+    def initialize(card_data)
+      @suit = card_data[:suit]
+      @rank = card_data[:rank]
+      set_value_by_rank_name(card_data[:rank])
     end
 
     def set_value_by_rank_name(rank)
-      if rank == "Jack" then
-        @value = 11
-      elsif rank == "Queen" then
-        @value = 12
-      elsif rank == "King" then
-        @value = 13
-      elsif rank == "Ace" then
-        @value = 14
-      else
-        @value = rank.to_i
-      end
+      @value = RANKS.index(rank) + 2
     end
 
     def worth_less_than(other_hand)
@@ -45,6 +31,10 @@ module PokerRanking
     attr_reader :rank
     attr_reader :suit
 
+    def self.from_name(name)
+      rank, suit = name.split /\s+of\s+/
+      PokerRanking::Card.new({rank: rank, suit: suit})
+    end
 
   end
 end
