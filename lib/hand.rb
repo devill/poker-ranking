@@ -15,13 +15,13 @@ module PokerRanking
     attr_reader :second_value
     attr_reader :kickers
 
-    def initialize(*cards)
+    def initialize(cards)
       @cards = []
       cards.each do |card|
         if card.is_a? PokerRanking::Card
           @cards << card
         elsif card.is_a? String
-          @cards << PokerRanking::Card.new(card)
+          @cards << PokerRanking::Card::from_name(card)
         else
           raise 'Hand initializer expects a card or a card name'
         end

@@ -3,7 +3,7 @@ $:.push(File.join(File.dirname(__FILE__), '../../lib'))
 
 module Helpers
   def hand(*cards)
-    PokerRanking::Hand.new(*cards)
+    PokerRanking::Hand.new(cards)
   end
 end
 
