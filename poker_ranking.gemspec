@@ -14,4 +14,7 @@ Gem::Specification.new do |s|
   s.files       = Dir.glob("{lib}/**/*")
   s.homepage    = 'http://leanpoker.org'
   s.license     = 'MIT'
+
+  s.add_development_dependency('rspec')
+  s.add_development_dependency('rake')
 end
