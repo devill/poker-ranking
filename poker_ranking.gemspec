@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.authors     = ["Rafael Ordog aka DeVill", "Paul Yule"]
   s.email       = 'rafael@ordog.tk'
   s.files       = Dir.glob("{lib}/**/*")
-  s.homepage    =
-      'http://leanpoker.org'
-  s.license       = 'MIT'
+  s.homepage    = 'http://leanpoker.org'
+  s.license     = 'MIT'
 end
