@@ -1,5 +1,8 @@
+lib = File.expand_path('../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
 require 'rspec/core/rake_task'
-require_relative 'lib/poker_ranking'
+require 'poker_ranking'
 
 namespace :gem do
   task :build do

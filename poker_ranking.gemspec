@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = PokerRanking::VERSION
   s.date        = '2014-01-31'
   s.summary     = "Poker cards, and ranking utilities for poker apps."
-  s.description = "Poker cards, and ranking utilities for poker apps."
+  s.description = "Created for the lean poker project"
   s.authors     = ["Rafael Ordog aka DeVill", "Paul Yule"]
   s.email       = 'rafael@ordog.tk'
   s.files       = Dir.glob("{lib}/**/*")
