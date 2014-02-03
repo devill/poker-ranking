@@ -10,7 +10,7 @@ namespace :gem do
   end
 
   task :release => :build do
-    system "gem push poker_ranking-#{PokerRanking::VERSION}.gem"
+    system "gem push poker-ranking-#{PokerRanking::VERSION}.gem"
   end
 end
 

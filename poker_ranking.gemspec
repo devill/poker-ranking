@@ -4,7 +4,7 @@ $:.unshift lib unless $:.include?(lib)
 require 'poker_ranking'
 
 Gem::Specification.new do |s|
-  s.name        = 'poker_ranking'
+  s.name        = 'poker-ranking'
   s.version     = PokerRanking::VERSION
   s.date        = '2014-01-31'
   s.summary     = "Poker cards, and ranking utilities for poker apps."
