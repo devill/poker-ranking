@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 
 describe PokerRanking::Hand do
   it "should accept cards in it's constructor" do
-    card = PokerRanking::Card::from_name('6 of Hearts')
+    card = PokerRanking::Card::by_name('6 of Hearts')
 
     hand = PokerRanking::Hand.new([card])
 
@@ -11,7 +11,7 @@ describe PokerRanking::Hand do
   end
 
   it "should accept card name in it's constructor" do
-    card = PokerRanking::Card::from_name('6 of Hearts')
+    card = PokerRanking::Card::by_name('6 of Hearts')
 
     hand = PokerRanking::Hand.new(['6 of Hearts'])
 
@@ -19,7 +19,7 @@ describe PokerRanking::Hand do
   end
 
   it 'should accept card hashes' do
-    card = PokerRanking::Card::from_name('6 of Hearts')
+    card = PokerRanking::Card::by_name('6 of Hearts')
 
     hand = PokerRanking::Hand.new([{rank: 6, suit: 'Hearts'}])
 

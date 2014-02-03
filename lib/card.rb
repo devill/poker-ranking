@@ -31,9 +31,13 @@ module PokerRanking
     attr_reader :rank
     attr_reader :suit
 
-    def self.from_name(name)
+    def self.by_name(name)
       rank, suit = name.split /\s+of\s+/
       PokerRanking::Card.new({rank: rank, suit: suit})
+    end
+
+    def self.by_id(id)
+      PokerRanking::Card.new({rank: RANKS[id % 13], suit: SUITS[id / 13]})
     end
 
   end

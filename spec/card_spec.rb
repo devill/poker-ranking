@@ -6,7 +6,7 @@ require_relative '../lib/card'
 describe 'PokerRanking::Card' do
 
   def get_card(card_name)
-    PokerRanking::Card::from_name card_name
+    PokerRanking::Card::by_name card_name
   end
 
   it 'should have a rank and a value' do
@@ -68,4 +68,16 @@ describe 'PokerRanking::Card' do
     card.to_s.should == 'Jack of Diamonds'
   end
 
+  [
+    [0, '2 of Hearts'],
+    [1, '3 of Hearts'],
+    [9, 'Jack of Hearts'],
+    [23, 'Queen of Diamonds'],
+    [37, 'King of Spades'],
+    [51, 'Ace of Clubs'],
+  ].each do |id, name|
+    it "should return the card #{name} for id #{id}" do
+      PokerRanking::Card::by_id(id).to_s.should == name
+    end
+  end
 end

@@ -21,7 +21,7 @@ module PokerRanking
         if card.is_a? PokerRanking::Card
           @cards << card
         elsif card.is_a? String
-          @cards << PokerRanking::Card::from_name(card)
+          @cards << PokerRanking::Card::by_name(card)
         else
           @cards << PokerRanking::Card.new(card)
         end
