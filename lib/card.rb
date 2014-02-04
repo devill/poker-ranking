@@ -23,6 +23,10 @@ module PokerRanking
       "#{@rank} of #{@suit}"
     end
 
+    def data
+      { rank: @rank, suit: @suit }
+    end
+
     def ==(other_card)
       @value == other_card.value && @rank == other_card.rank
     end

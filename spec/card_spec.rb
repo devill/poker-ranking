@@ -80,4 +80,8 @@ describe 'PokerRanking::Card' do
       PokerRanking::Card::by_id(id).to_s.should == name
     end
   end
+
+  it 'should return the data of the card as a hash' do
+    PokerRanking::Card::by_name('5 of Diamonds').data.should == { rank: '5', suit: 'Diamonds' }
+  end
 end
