@@ -28,4 +28,9 @@ describe 'Full house' do
     hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs').name.should == 'full house'
   end
 
+  it 'should ignore unused cards' do
+    hand('Queen of Spades','Queen of Hearts','King of Diamonds','King of Clubs','2 of Spades','Queen of Diamonds','3 of Spades').
+      should_tie_with hand('Queen of Spades','Queen of Hearts','King of Diamonds','King of Clubs','2 of Spades','Queen of Clubs','4 of Spades')
+  end
+
 end

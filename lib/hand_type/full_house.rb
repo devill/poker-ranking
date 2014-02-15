@@ -19,6 +19,10 @@ module PokerRanking
         highest_same_value 3
       end
 
+      def kickers
+        []
+      end
+
       def name
         'full house'
       end
