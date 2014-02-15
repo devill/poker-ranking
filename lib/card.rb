@@ -3,6 +3,7 @@ module PokerRanking
   class PokerRanking::Card
 
     RANKS = %w(2 3 4 5 6 7 8 9 10 Jack Queen King Ace)
+    SHORT_RANKS = %w(2 3 4 5 6 7 8 9 10 J Q K A)
     SUITS = %w(Hearts Diamonds Spades Clubs)
 
     def initialize(card_data)
@@ -24,7 +25,7 @@ module PokerRanking
     end
 
     def data
-      { rank: @rank, suit: @suit }
+      { rank: SHORT_RANKS[@value - 2], suit: @suit.downcase }
     end
 
     def ==(other_card)
