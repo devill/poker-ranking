@@ -61,6 +61,16 @@ module PokerRanking
       cards == other.cards
     end
 
+    def data
+      {
+          cards: @cards.map { |card| card.data },
+          rank: rank,
+          value: value,
+          second_value: second_value,
+          kickers: kickers
+      }
+    end
+
 
     private
 
