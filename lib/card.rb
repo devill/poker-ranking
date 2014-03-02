@@ -7,13 +7,13 @@ module PokerRanking
     SUITS = %w(Hearts Diamonds Spades Clubs)
 
     def initialize(card_data)
-      @suit = card_data.has_key?(:suit) ? card_data[:suit] : card_data['suit']
+      @suit = (card_data.has_key?(:suit) ? card_data[:suit] : card_data['suit']).capitalize
       @rank = card_data.has_key?(:rank) ? card_data[:rank].to_s : card_data['rank'].to_s
       set_value_by_rank_name(@rank)
     end
 
     def set_value_by_rank_name(rank)
-      @value = RANKS.index(rank) + 2
+      @value = RANKS.index(rank.capitalize) + 2
     end
 
     def worth_less_than(other_hand)

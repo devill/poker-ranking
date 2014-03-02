@@ -85,4 +85,8 @@ describe 'PokerRanking::Card' do
     PokerRanking::Card::by_name('5 of Diamonds').data.should == { rank: '5', suit: 'diamonds' }
     PokerRanking::Card::by_name('King of Diamonds').data.should == { rank: 'K', suit: 'diamonds' }
   end
+
+  it 'should accept card names in a case insensitive manner' do
+    PokerRanking::Card::by_name('king of diamonds').data.should == { rank: 'K', suit: 'diamonds' }
+  end
 end
