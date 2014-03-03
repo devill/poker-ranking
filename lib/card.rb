@@ -13,7 +13,8 @@ module PokerRanking
     end
 
     def set_value_by_rank_name(rank)
-      @value = RANKS.index(rank.capitalize) + 2
+      index = RANKS.index(rank.capitalize) ? RANKS.index(rank.capitalize) : SHORT_RANKS.index(rank.capitalize)
+      @value = index + 2
     end
 
     def worth_less_than(other_hand)
