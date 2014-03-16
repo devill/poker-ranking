@@ -33,4 +33,11 @@ describe 'Four of a kind' do
       expect(hand('10 of Diamonds', '10 of Hearts', '10 of Spades', '10 of Clubs', 'Jack of Spades').name).to eq 'four of a kind'
     end
   end
+
+  describe '#cards_used' do
+    it 'should return the four of a kind plus one kicker' do
+      three_of_a_kind_hand = hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs', 'Ace of Hearts', 'Jack of Diamonds')
+      expect(three_of_a_kind_hand.cards_used).to eq cards('Jack of Spades', 'Jack of Hearts', 'Jack of Clubs', 'Jack of Diamonds', 'Ace of Hearts')
+    end
+  end
 end

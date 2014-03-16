@@ -27,6 +27,10 @@ module PokerRanking
       def name
         'four of a kind'
       end
+
+      def cards_used
+        cards_for_values_and_kickers value
+      end
     end
   end
 end
