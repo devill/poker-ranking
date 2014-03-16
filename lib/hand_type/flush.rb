@@ -6,7 +6,7 @@ module PokerRanking
 
       def handles?
         count = { 'Hearts' => 0, 'Clubs' => 0, 'Diamonds' => 0, 'Spades' => 0 }
-        @cards.each do |card|
+        cards.each do |card|
           count[card.suit] += 1
         end
 
@@ -27,7 +27,7 @@ module PokerRanking
       #only use kickers that are of the suit
       def kickers
         kick = []
-        @cards.reverse.each do |card|
+        cards.reverse.each do |card|
           if card.suit == @flush_suit
             kick << card.value
           end

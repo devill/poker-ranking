@@ -36,7 +36,7 @@ module PokerRanking
       def has_two_pair?
         pair_count = 0
         last_value = 0
-        @cards.each do |card|
+        cards.each do |card|
           if card.value == last_value
             pair_count += 1
           end

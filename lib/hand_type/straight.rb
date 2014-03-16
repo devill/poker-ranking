@@ -30,7 +30,7 @@ module PokerRanking
           last_value = 1
         end
 
-        @cards.each do |card|
+        cards.each do |card|
           if card.value == last_value + 1
             count += 1
           else
@@ -46,7 +46,7 @@ module PokerRanking
       end
 
       def has_ace
-        @cards[-1].rank == 'Ace'
+        cards[-1].rank == 'Ace'
       end
 
 

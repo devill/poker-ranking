@@ -57,6 +57,10 @@ module PokerRanking
       hand_type.name
     end
 
+    def cards_used
+      hand_type.cards_used
+    end
+
     def ==(other)
       cards == other.cards
     end

@@ -13,6 +13,10 @@ module PokerRanking
       def name
         'high card'
       end
+
+      def cards_used
+        cards[-5..-1]
+      end
     end
   end
 end
