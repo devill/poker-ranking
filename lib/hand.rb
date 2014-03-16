@@ -68,6 +68,7 @@ module PokerRanking
     def data
       {
           cards: @cards.map { |card| card.data },
+          cards_used: cards_used.map { |card| card.data },
           rank: rank,
           value: value,
           second_value: second_value,

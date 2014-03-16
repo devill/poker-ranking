@@ -44,13 +44,25 @@ describe PokerRanking::Hand do
 
   context "#data" do
     it "should contain the cards" do
-      hand = PokerRanking::Hand.new(['6 of Hearts','6 of Spades', '6 of Diamonds', '10 of Diamonds', '10 of Clubs'])
+      hand = PokerRanking::Hand.new(['6 of Hearts','6 of Spades', '6 of Diamonds', '10 of Diamonds', '10 of Clubs', 'Jack of Hearts'])
       expect(hand.data[:cards]).to eq [
           {rank: "6", suit: "hearts"},
           {rank: "6", suit: "spades"},
           {rank: "6", suit: "diamonds"},
+          {rank: "10", suit: "clubs"},
           {rank: "10", suit: "diamonds"},
-          {rank: "10", suit: "clubs"}
+          {rank: "J", suit: "hearts"}
+      ]
+    end
+
+    it "should contain the cards used" do
+      hand = PokerRanking::Hand.new(['6 of Hearts','6 of Spades', '6 of Diamonds', '10 of Diamonds', '10 of Clubs', 'Jack of Hearts'])
+      expect(hand.data[:cards_used]).to eq [
+          {rank: "6", suit: "diamonds"},
+          {rank: "6", suit: "spades"},
+          {rank: "6", suit: "hearts"},
+          {rank: "10", suit: "diamonds"},
+          {rank: "10", suit: "clubs"},
       ]
     end
 
