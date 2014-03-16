@@ -20,7 +20,7 @@ describe 'Straight' do
       end
 
       it 'should ignore extra cards within the straight' do
-        hand('8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts', 'Queen of Diamonds').
+        hand('8 of Clubs', '9 of Spades', '10 of Spades', '10 of Hearts', 'Jack of Hearts', 'Queen of Diamonds').
             should_defeat hand('King of Spades', 'King of Hearts', 'King of Clubs')
       end
     end
