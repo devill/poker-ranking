@@ -15,7 +15,7 @@ module PokerRanking
       end
 
       def cards_used
-        cards[-5..-1]
+        cards_for_values_and_kickers
       end
     end
   end

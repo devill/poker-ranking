@@ -32,10 +32,7 @@ module PokerRanking
       end
 
       def cards_used
-        result  = cards.select { |card| card.value == value }
-        result += cards.select { |card| card.value == second_value }
-        result << cards.select { |card| card.value != value and card.value != second_value }[-1]
-        result
+        cards_for_values_and_kickers value, second_value
       end
 
       private

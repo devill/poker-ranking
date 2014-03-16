@@ -24,9 +24,7 @@ module PokerRanking
       end
 
       def cards_used
-        cards_used  = cards.select { |card| card.value == value }
-        cards_used += cards.select { |card| card.value != value }[-3..-1]
-        cards_used
+        cards_for_values_and_kickers value
       end
     end
   end
