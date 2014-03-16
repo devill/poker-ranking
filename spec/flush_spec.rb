@@ -46,7 +46,7 @@ describe 'Flush' do
 
   describe '#name' do
     it 'should be called a flush' do
-      hand('2 of Hearts', '4 of Hearts', '5 of Hearts', '9 of Hearts', 'Jack of Hearts').name.should == 'flush'
+      expect(hand('2 of Hearts', '4 of Hearts', '5 of Hearts', '9 of Hearts', 'Jack of Hearts').name).to eq 'flush'
     end
   end
 

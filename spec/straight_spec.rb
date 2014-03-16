@@ -41,7 +41,7 @@ describe 'Straight' do
 
   describe '#name' do
     it 'should be called a straight' do
-      hand('8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts', 'Queen of Diamonds').name.should == 'straight'
+      expect(hand('8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts', 'Queen of Diamonds').name).to eq 'straight'
     end
   end
 end

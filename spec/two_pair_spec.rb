@@ -35,7 +35,7 @@ describe 'Two Pair' do
 
   describe '#name' do
     it 'should be called two pairs' do
-      hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs', 'Ace of Hearts').name.should == 'two pairs'
+      expect(hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs', 'Ace of Hearts').name).to eq 'two pairs'
     end
   end
 end

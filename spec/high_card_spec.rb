@@ -11,7 +11,7 @@ describe 'High Card' do
 
   describe '#name' do
     it 'should be called a High Card' do
-      hand('10 of Hearts', '7 of Diamonds').name.should == 'high card'
+      expect(hand('10 of Hearts', '7 of Diamonds').name).to eq 'high card'
     end
   end
 

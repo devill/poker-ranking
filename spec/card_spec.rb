@@ -11,16 +11,16 @@ describe 'PokerRanking::Card' do
 
   it 'should have a rank and a value' do
     card = get_card '10 of Diamonds'
-    card.rank.should == '10'
-    card.value.should == 10
+    expect(card.rank).to eq '10'
+    expect(card.value).to eq 10
 
     card = get_card 'King of Diamonds'
-    card.rank.should == 'King'
-    card.value.should == 13
+    expect(card.rank).to eq 'King'
+    expect(card.value).to eq 13
 
     card = get_card '10 of Hearts'
-    card.rank.should == '10'
-    card.value.should == 10
+    expect(card.rank).to eq '10'
+    expect(card.value).to eq 10
   end
 
   it 'should be comparable based on value' do
@@ -39,10 +39,10 @@ describe 'PokerRanking::Card' do
 
   it 'should have a suit' do
     card = get_card '8 of Hearts'
-    card.suit.should == 'Hearts'
+    expect(card.suit).to eq 'Hearts'
 
     card = get_card 'King of Diamonds'
-    card.suit.should == 'Diamonds'
+    expect(card.suit).to eq 'Diamonds'
   end
 
   [
@@ -57,15 +57,15 @@ describe 'PokerRanking::Card' do
     it "should create correct card when passed #{name}" do
       card = get_card name
 
-      card.rank.should == rank
-      card.suit.should == suit
+      expect(card.rank).to eq rank
+      expect(card.suit).to eq suit
     end
   end
   
   it 'should return the name' do
     card = get_card 'Jack of Diamonds'
 
-    card.to_s.should == 'Jack of Diamonds'
+    expect(card.to_s).to eq 'Jack of Diamonds'
   end
 
   [
@@ -77,20 +77,20 @@ describe 'PokerRanking::Card' do
     [51, 'Ace of Clubs'],
   ].each do |id, name|
     it "should return the card #{name} for id #{id}" do
-      PokerRanking::Card::by_id(id).to_s.should == name
+      expect(PokerRanking::Card::by_id(id).to_s).to eq name
     end
   end
 
   it 'should return the data of the card as a hash' do
-    PokerRanking::Card::by_name('5 of Diamonds').data.should == { rank: '5', suit: 'diamonds' }
-    PokerRanking::Card::by_name('King of Diamonds').data.should == { rank: 'K', suit: 'diamonds' }
+    expect(PokerRanking::Card::by_name('5 of Diamonds').data).to eq({ rank: '5', suit: 'diamonds' })
+    expect(PokerRanking::Card::by_name('King of Diamonds').data).to eq({ rank: 'K', suit: 'diamonds' })
   end
 
   it 'should accept card names in a case insensitive manner' do
-    PokerRanking::Card::by_name('king of diamonds').data.should == { rank: 'K', suit: 'diamonds' }
+    expect(PokerRanking::Card::by_name('king of diamonds').data).to eq({ rank: 'K', suit: 'diamonds' })
   end
 
   it 'should accept short ranks' do
-    PokerRanking::Card.new({ rank: 'K', suit: 'diamonds' }).data.should == { rank: 'K', suit: 'diamonds' }
+    expect(PokerRanking::Card.new({ rank: 'K', suit: 'diamonds' }).data).to eq({ rank: 'K', suit: 'diamonds' })
   end
 end

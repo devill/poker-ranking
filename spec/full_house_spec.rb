@@ -33,7 +33,7 @@ describe 'Full house' do
 
   describe '#name' do
     it 'should be called a full house' do
-      hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs').name.should == 'full house'
+      expect(hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs').name).to eq 'full house'
     end
   end
 

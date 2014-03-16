@@ -25,7 +25,7 @@ describe 'Three of a kind' do
 
   describe '#name' do
     it 'should be called three of a kind' do
-      hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs', 'Ace of Hearts').name.should == 'three of a kind'
+      expect(hand('Queen of Diamonds', 'Jack of Spades', 'Jack of Hearts', 'Jack of Clubs', 'Ace of Hearts').name).to eq 'three of a kind'
     end
   end
 end

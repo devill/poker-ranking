@@ -30,7 +30,7 @@ describe 'Four of a kind' do
 
   describe '#name' do
     it 'should be called four of a kind' do
-      hand('10 of Diamonds', '10 of Hearts', '10 of Spades', '10 of Clubs', 'Jack of Spades').name.should == 'four of a kind'
+      expect(hand('10 of Diamonds', '10 of Hearts', '10 of Spades', '10 of Clubs', 'Jack of Spades').name).to eq 'four of a kind'
     end
   end
 end

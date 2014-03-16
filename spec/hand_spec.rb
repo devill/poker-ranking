@@ -7,7 +7,7 @@ describe PokerRanking::Hand do
 
     hand = PokerRanking::Hand.new([card])
 
-    hand.cards.first.should == card
+    expect(hand.cards.first).to eq card
   end
 
   it "should accept card name in it's constructor" do
@@ -15,7 +15,7 @@ describe PokerRanking::Hand do
 
     hand = PokerRanking::Hand.new(['6 of Hearts'])
 
-    hand.cards.first.should == card
+    expect(hand.cards.first).to eq card
   end
 
   it 'should accept card hashes' do
@@ -23,7 +23,7 @@ describe PokerRanking::Hand do
 
     hand = PokerRanking::Hand.new([{rank: 6, suit: 'Hearts'}])
 
-    hand.cards.first.should == card
+    expect(hand.cards.first).to eq card
   end
 
   it 'should accept card hashes with string keys' do
@@ -31,21 +31,21 @@ describe PokerRanking::Hand do
 
     hand = PokerRanking::Hand.new([{'rank' => 6, 'suit' => 'Hearts'}])
 
-    hand.cards.first.should == card
+    expect(hand.cards.first).to eq card
   end
 
   it 'should rank the empty hand below any other hand' do
     empty_hand = PokerRanking::Hand.new []
     other_hand = PokerRanking::Hand.new(['2 of Hearts'])
 
-    empty_hand.defeats?(other_hand).should == false
-    other_hand.defeats?(empty_hand).should == true
+    expect(empty_hand.defeats?(other_hand)).to eq false
+    expect(other_hand.defeats?(empty_hand)).to eq true
   end
 
   context "#data" do
     it "should contain the cards" do
       hand = PokerRanking::Hand.new(['6 of Hearts','6 of Spades', '6 of Diamonds', '10 of Diamonds', '10 of Clubs'])
-      hand.data[:cards].should == [
+      expect(hand.data[:cards]).to eq [
           {rank: "6", suit: "hearts"},
           {rank: "6", suit: "spades"},
           {rank: "6", suit: "diamonds"},
@@ -57,17 +57,17 @@ describe PokerRanking::Hand do
     it "should contain calculated ranking data" do
       hand = PokerRanking::Hand.new(['6 of Hearts','6 of Spades', '6 of Diamonds', '10 of Diamonds', '10 of Clubs'])
 
-      hand.data[:rank].should == 6
-      hand.data[:value].should == 6
-      hand.data[:second_value].should == 10
-      hand.data[:kickers].should == []
+      expect(hand.data[:rank]).to eq 6
+      expect(hand.data[:value]).to eq 6
+      expect(hand.data[:second_value]).to eq 10
+      expect(hand.data[:kickers]).to eq []
 
       hand = PokerRanking::Hand.new(['6 of Hearts','6 of Spades', '5 of Diamonds', '10 of Diamonds', '10 of Clubs'])
 
-      hand.data[:rank].should == 2
-      hand.data[:value].should == 10
-      hand.data[:second_value].should == 6
-      hand.data[:kickers].should == [5]
+      expect(hand.data[:rank]).to eq 2
+      expect(hand.data[:value]).to eq 10
+      expect(hand.data[:second_value]).to eq 6
+      expect(hand.data[:kickers]).to eq [5]
     end
   end
 

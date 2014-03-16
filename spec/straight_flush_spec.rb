@@ -25,7 +25,7 @@ describe 'Straight Flush' do
 
   describe '#name' do
     it 'should be called a straight flush' do
-      hand('10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades', 'Ace of Spades').name.should == 'straight flush'
+      expect(hand('10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades', 'Ace of Spades').name).to eq 'straight flush'
     end
   end
 end
