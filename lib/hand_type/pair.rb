@@ -22,6 +22,12 @@ module PokerRanking
       def name
         'pair'
       end
+
+      def cards_used
+        cards_used =  cards.select { |card| card.value == highest_same_value(2) }
+        cards_used += cards.select { |card| card.value != highest_same_value(2) }[-3..-1]
+        cards_used
+      end
     end
   end
 end

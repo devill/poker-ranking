@@ -58,7 +58,7 @@ module PokerRanking
     end
 
     def cards_used
-      hand_type.cards_used
+      hand_type.cards_used.sort_by! { |card| card.value }
     end
 
     def ==(other)
