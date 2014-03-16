@@ -42,6 +42,10 @@ module PokerRanking
       def name
         'flush'
       end
+
+      def cards_used
+        cards.select { |card| card.suit == @flush_suit }[-5..-1]
+      end
     end
   end
 end

@@ -50,4 +50,11 @@ describe 'Flush' do
     end
   end
 
+  describe '#cards_used' do
+    it 'should return the three of a kind plus two kickers' do
+      three_of_a_kind_hand =  hand('6 of Hearts', '7 of Hearts', '8 of Hearts', '9 of Hearts', 'King of Hearts', '2 of Hearts','Queen of Spades')
+      expect(three_of_a_kind_hand.cards_used).to eq cards('6 of Hearts', '7 of Hearts', '8 of Hearts', '9 of Hearts', 'King of Hearts')
+    end
+  end
+
 end
