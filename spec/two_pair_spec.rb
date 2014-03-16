@@ -38,4 +38,11 @@ describe 'Two Pair' do
       expect(hand('Jack of Spades', 'Jack of Hearts', '8 of Diamonds', '8 of Clubs', 'Ace of Hearts').name).to eq 'two pairs'
     end
   end
+
+  describe 'cards_used' do
+    it 'should return the pair, and the 3 highest kickers' do
+      pair_hand = hand('2 of Hearts', '2 of Diamonds', 'Ace of Spades', 'Ace of Clubs', 'Queen of Hearts', '6 of Spades')
+      expect(pair_hand.cards_used).to eq hand('2 of Hearts', '2 of Diamonds', 'Ace of Spades', 'Ace of Clubs', 'Queen of Hearts').cards
+    end
+  end
 end
