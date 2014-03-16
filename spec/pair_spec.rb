@@ -40,7 +40,7 @@ describe 'pair' do
     end
   end
 
-  describe 'cards_used' do
+  describe '#cards_used' do
     it 'should return the pair, and the 3 highest kickers' do
       pair_hand = hand('2 of Hearts','2 of Diamonds','Ace of Spades','King of Clubs','Queen of Hearts','6 of Spades')
       expect(pair_hand.cards_used).to eq cards('2 of Hearts','2 of Diamonds','Queen of Hearts','King of Clubs','Ace of Spades')

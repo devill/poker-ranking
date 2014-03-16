@@ -17,6 +17,10 @@ module PokerRanking
       def name
         'straight'
       end
+
+      def cards_used
+        cards_in_straight cards
+      end
     end
   end
 end

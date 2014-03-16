@@ -44,4 +44,11 @@ describe 'Straight' do
       expect(hand('8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts', 'Queen of Diamonds').name).to eq 'straight'
     end
   end
+
+  describe '#cards_used' do
+    it 'should return the pair, and the 3 highest kickers' do
+      two_pair_hand = hand('4 of Diamonds', '7 of Hearts', '8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts', 'King of Diamonds')
+      expect(two_pair_hand.cards_used).to eq cards('7 of Hearts', '8 of Clubs', '9 of Spades', '10 of Spades', 'Jack of Hearts')
+    end
+  end
 end

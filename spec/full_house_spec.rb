@@ -36,7 +36,7 @@ describe 'Full house' do
       expect(hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs').name).to eq 'full house'
     end
   end
-  describe 'cards_used' do
+  describe '#cards_used' do
 
 
     it 'should return the pair, and the 3 highest kickers' do
