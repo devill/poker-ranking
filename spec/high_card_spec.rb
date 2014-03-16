@@ -18,7 +18,7 @@ describe 'High Card' do
   describe '#used_cards' do
     it 'should return the 5 highest cards' do
       high_cards = hand('10 of Hearts', '2 of Diamonds', 'King of Diamonds', 'Ace of Spades', '5 of Clubs', 'Jack of Clubs')
-      expect(high_cards.cards_used).to eq(hand('10 of Hearts', 'King of Diamonds', 'Ace of Spades', '5 of Clubs', 'Jack of Clubs').cards)
+      expect(high_cards.cards_used).to eq cards('5 of Clubs', '10 of Hearts', 'Jack of Clubs', 'King of Diamonds', 'Ace of Spades')
     end
   end
 end

@@ -43,12 +43,12 @@ describe 'pair' do
   describe 'cards_used' do
     it 'should return the pair, and the 3 highest kickers' do
       pair_hand = hand('2 of Hearts','2 of Diamonds','Ace of Spades','King of Clubs','Queen of Hearts','6 of Spades')
-      expect(pair_hand.cards_used).to eq hand('2 of Hearts','2 of Diamonds','Ace of Spades','King of Clubs','Queen of Hearts').cards
+      expect(pair_hand.cards_used).to eq cards('2 of Hearts','2 of Diamonds','Queen of Hearts','King of Clubs','Ace of Spades')
     end
 
     it 'should return the cards in value order' do
       pair_hand = hand('Jack of Hearts','Jack of Diamonds','Ace of Spades','King of Clubs','7 of Hearts','6 of Spades')
-      expect(pair_hand.cards_used).to eq hand('Jack of Hearts','Jack of Diamonds','Ace of Spades','King of Clubs','7 of Hearts').cards
+      expect(pair_hand.cards_used).to eq cards('7 of Hearts', 'Jack of Hearts','Jack of Diamonds','King of Clubs','Ace of Spades')
     end
   end
 end

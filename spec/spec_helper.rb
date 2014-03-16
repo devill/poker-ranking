@@ -7,6 +7,10 @@ module Helpers
   def hand(*cards)
     PokerRanking::Hand.new(cards)
   end
+
+  def cards(*cards)
+    cards.map { |card_name| PokerRanking::Card::by_name(card_name) }
+  end
 end
 
 require 'rspec'
