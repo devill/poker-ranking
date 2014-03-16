@@ -28,4 +28,11 @@ describe 'Straight Flush' do
       expect(hand('10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades', 'Ace of Spades').name).to eq 'straight flush'
     end
   end
+
+  describe '#cards_used' do
+    it 'should return the pair, and the 3 highest kickers' do
+      two_pair_hand = hand('5 of Hearts', '6 of Hearts', '7 of Hearts', '8 of Hearts', '9 of Hearts', '10 of Hearts', 'Jack of Spades', 'King of Hearts')
+      expect(two_pair_hand.cards_used).to eq cards('6 of Hearts', '7 of Hearts', '8 of Hearts', '9 of Hearts', '10 of Hearts')
+    end
+  end
 end

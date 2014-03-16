@@ -23,6 +23,13 @@ module PokerRanking
       def name
         'straight flush'
       end
+
+      def cards_used
+        SUITS.each do |suit|
+          straight_in_suite = cards_in_straight(cards.select { |card| card.suit == suit })
+          return straight_in_suite[-5..-1] if straight_in_suite.length >= 5
+        end
+      end
     end
   end
 end

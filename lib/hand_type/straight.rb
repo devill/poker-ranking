@@ -19,7 +19,7 @@ module PokerRanking
       end
 
       def cards_used
-        cards_in_straight cards
+        cards_in_straight(cards)[-5..-1]
       end
     end
   end
