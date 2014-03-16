@@ -26,6 +26,10 @@ module PokerRanking
       def name
         'full house'
       end
+
+      def cards_used
+        cards_for_values_and_kickers value, second_value
+      end
     end
   end
 end

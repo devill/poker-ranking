@@ -36,5 +36,18 @@ describe 'Full house' do
       expect(hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs').name).to eq 'full house'
     end
   end
+  describe 'cards_used' do
 
+
+    it 'should return the pair, and the 3 highest kickers' do
+      full_house_hand = hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs', '7 of Spades')
+      expect(full_house_hand.cards_used).to eq cards('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs')
+    end
+
+    it 'should only include three larger and two smaller cards if there are two triplets of same value cards' do
+      full_house_hand = hand('10 of Diamonds', '10 of Hearts', '10 of Spades', 'Jack of Spades', 'Jack of Clubs', 'Jack of Hearts')
+      expect(full_house_hand.cards_used.length).to eq 5
+      expect(full_house_hand.cards_used.select{ |card| card.value == 10 }.length).to eq 2
+    end
+  end
 end

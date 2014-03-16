@@ -54,7 +54,7 @@ module PokerRanking
 
       def cards_for_values_and_kickers(*values)
         result = cards.select { |card| not values.include? card.value }
-        values.each do |value|
+        values.reverse.each do |value|
           result += cards.select { |card| card.value == value }
         end
         result[-5..-1]
