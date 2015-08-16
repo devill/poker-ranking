@@ -18,6 +18,10 @@ include Helpers
 
 require_relative '../lib/hand'
 
+RSpec.configure do |config|
+  config.expect_with(:rspec) { |c| c.syntax = [:should,:expect] }
+end
+
 
 module PokerRanking
   class Hand

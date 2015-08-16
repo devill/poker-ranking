@@ -27,14 +27,14 @@ describe 'PokerRanking::Card' do
     lCard = get_card '8 of Diamonds'
     rCard = get_card '9 of Diamonds'
 
-    expect(lCard.worth_less_than(rCard)).to be_true
-    expect(rCard.worth_less_than(lCard)).to be_false
+    expect(lCard.worth_less_than(rCard)).to be true
+    expect(rCard.worth_less_than(lCard)).to be false
 
     lCard = get_card '8 of Hearts'
     rCard = get_card '9 of Spades'
 
-    expect(lCard.worth_less_than(rCard)).to be_true
-    expect(rCard.worth_less_than(lCard)).to be_false
+    expect(lCard.worth_less_than(rCard)).to be true
+    expect(rCard.worth_less_than(lCard)).to be false
   end
 
   it 'should have a suit' do
