@@ -21,6 +21,10 @@ module PokerRanking
       def cards_used
         cards_in_straight(cards)[-5..-1]
       end
+
+      def kickers
+        []
+      end
     end
   end
 end

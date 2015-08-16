@@ -30,6 +30,10 @@ module PokerRanking
           return straight_in_suite[-5..-1] if straight_in_suite.length >= 5
         end
       end
+
+      def kickers
+        []
+      end
     end
   end
 end
