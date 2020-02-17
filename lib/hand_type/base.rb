@@ -73,7 +73,7 @@ module PokerRanking
         cards_in_straight = []
         last_value = 0
 
-        if card_set[-1].rank == 'Ace'
+        if card_set[-1].value == 14
           cards_in_streak << card_set[-1]
           last_value = 1
         end

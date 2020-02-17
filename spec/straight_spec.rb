@@ -39,6 +39,9 @@ describe 'Straight' do
     it 'should accept Ace as one' do
       hand('Ace of Clubs', '2 of Hearts', '3 of Spades', '4 of Diamonds', '5 of Hearts').
           should_defeat hand('King of Spades', 'King of Hearts', 'King of Clubs')
+
+      hand('A of Clubs', '2 of Hearts', '3 of Spades', '4 of Diamonds', '5 of Hearts').
+          should_defeat hand('King of Spades', 'King of Hearts', 'King of Clubs')
     end
   end
 
